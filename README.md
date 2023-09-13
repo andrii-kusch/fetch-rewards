@@ -68,7 +68,7 @@ Python code of this project can be ran and interactively debugged in an IDE of y
 
 ## Testing
 
-Even though Docker Compose executes unittest test cases during deployment, you may choose to run them manually. For that run
+Even though Docker Compose executes unittest test cases during deployment, you may choose to run them manually. For that run from project root:
 
 ```
 
@@ -76,7 +76,7 @@ python -m unittest discover -v test
 
 ```
 
-from project root
+
 
   
 
