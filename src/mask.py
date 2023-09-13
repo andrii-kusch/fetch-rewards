@@ -16,7 +16,7 @@ def transform(message):
         message['device_id'] = mask(message['device_id'], salt=message['user_id'])
         sleep(0.5)  # Simulated hard work, comment/uncomment to explore replication or run full speed
         return message
-    # If anything goes wromng, log and ignore
+    # If anything goes wrong, log and ignore
     except KeyError as error:
         logging.warning(f'Unexpected message format. Following message is ignored: {message}')
         logging.debug(f"Following error occurred: {error}")
