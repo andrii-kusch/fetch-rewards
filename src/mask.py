@@ -14,7 +14,7 @@ def transform(message):
         message['create_date'] = date.today().strftime("%Y-%m-%d")
         message['ip'] = mask(message['ip'], salt=message['user_id'])
         message['device_id'] = mask(message['device_id'], salt=message['user_id'])
-        sleep(0.5)  # Simulated hard work, uncomment to explore replication
+        sleep(0.5)  # Simulated hard work, comment/uncomment to explore replication or run full speed
         return message
     # If anything goes wromng, log and ignore
     except KeyError as error:
