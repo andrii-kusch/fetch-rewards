@@ -190,4 +190,4 @@ Our database storage service can be scaled up too! Using indexing, replication a
 
 ## Last thoughts
 
-I am likely forgetting other important things. Please let me know if you have any questions! And hope to discuss this with you soon
+I am likely forgetting other important things. Please let me know if you have any questions! And hope to discuss this with you soon!
