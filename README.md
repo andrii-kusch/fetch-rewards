@@ -80,7 +80,7 @@ python -m unittest discover -v test
 
   
 
-## Design desicions and assumptions
+# Design desicions and assumptions
 
 Let us talk about decisions and assumptions that were made to implement this solution in just few hours that were given.
 
@@ -140,7 +140,7 @@ Requirements.txt are minimal and and precise. Versions are specified exactly to 
 
   
 
-## Next steps and future work
+# Next steps and future work
 
 Now let us imagine what could happen if this project grew in size and complexity into a full-size production implementation.
 
