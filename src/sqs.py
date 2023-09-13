@@ -8,7 +8,7 @@ def get_client(endpoint, region):
     return client("sqs", region_name=region, endpoint_url=endpoint)
     
 def get_messages_sqs(client, queue_url, wait, max_messages=10, retries=5, delay=5):
-    # Attempt to establish a receive messages from sqs. Several attempts will be made with a set delay
+    # Attempt to receive messages from sqs. Several attempts will be made with a set delay
     while retries:
         try:  
             response = client.receive_message(QueueUrl=queue_url,
