@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  localstack:
+    image: fetchdocker/data-takehome-localstack
+    ports:
+      - "4566:4566"
+  postgres:
+    image: fetchdocker/data-takehome-postgres
+    ports:
+      - 5432:5432
+  etl:
+    build: .
+    depends_on:
+      - postgres
+      - localstack
+    environment:
+      AWS_ACCESS_KEY_ID: test
+      AWS_SECRET_ACCESS_KEY: test
+      AWS_REGION: us-east-1
+      keep_listening: false
+    deploy:
+      replicas: 3
