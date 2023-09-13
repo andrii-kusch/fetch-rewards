@@ -1,4 +1,3 @@
-
 # Fetch Rewards
 
 # Data Engineering Take Home: ETL off a SQS Queue
@@ -41,15 +40,15 @@ There are several parameters that can be configured to change etl service's beha
 
   
 
-1) replicas. Specifies how many instances of ets service will be deployed and process messages from AWS sqs in parallel. This parameter must be specified.
+1) **replicas** Specifies how many instances of ets service will be deployed and process messages from AWS sqs in parallel. This parameter must be specified.
 
-2) max_messages. Sets how many messages at most can be received at once. By default is set to 10, which is the maximum AWS sqs queue can receive at once.
+2) **max_messages** Sets how many messages at most can be received at once. By default is set to 10, which is the maximum AWS sqs queue can receive at once.
 
-3) keep_listening. Describes behaviour after the sqs queue appers to be empty. If set to true (or 1, or yes) will keep etl containers running and periodically check if new messages appear in the queue. If set, after the queue is exhausted, elt service will switch to long pooling, checking the state of the queue only so often.
+3) **keep_listening** Describes behaviour after the sqs queue appers to be empty. If set to true (or 1, or yes) will keep etl containers running and periodically check if new messages appear in the queue. If set, after the queue is exhausted, elt service will switch to long pooling, checking the state of the queue only so often.
 
-4) long_pooling. For how long (in secs) sqs queue will be waiting for new messages after switching to long pooling.
+4) **long_pooling** For how long (in secs) sqs queue will be waiting for new messages after switching to long pooling.
 
-5) writting_buffer_size. A number of messages that, once reached, will be commited to Posgres in a single transaction.
+5) **writting_buffer_size** A number of messages that, once reached, will be commited to Posgres in a single transaction.
 
   
 
