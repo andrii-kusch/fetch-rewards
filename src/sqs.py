@@ -2,7 +2,7 @@ import logging
 from boto3 import client
 from time import sleep
 from botocore.exceptions import ClientError, EndpointConnectionError
-from urllib3.exceptions import NewConnectionError
+#from urllib3.exceptions import NewConnectionError
 
 def get_client(endpoint, region):
     return client("sqs", region_name=region, endpoint_url=endpoint)
@@ -23,7 +23,7 @@ def get_messages_sqs(client, queue_url, wait, max_messages=10, retries=5, delay=
                                       ReceiptHandle=message["ReceiptHandle"])
             # generate batches of messages
             yield messages
-        except (ClientError, EndpointConnectionError) as error:  #NewConnectionError?
+        except (ClientError, EndpointConnectionError) as error:  #NewConnectionError? <- saw it ONCE, wasn't able to reproduce
             logging.error(f"Receiveing messages failed. Is sqs ready? Retrying in {delay}, {retries} retries left.")
             logging.debug(f"Following error occurred: {error}")
             retries -= 1
