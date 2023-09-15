@@ -1,9 +1,10 @@
 import unittest
 from unittest import mock
+from unittest.mock import ANY
 from src.postgres import flush_buffer, get_connection_and_cursor
 
 test_data = [{'test1': 'data1'}, {'test2': 'data2'}]
-connection_args = {"user": "postgres", "password": "postgres",
+connection_args = {"user": ANY, "password": ANY,
                    "host": "postgres", "port":"5432", "database":"postgres"}
 query = "INSERT INTO user_logins VALUES (%(user_id)s, %(device_type)s, %(ip)s, %(device_id)s, %(locale)s, %(app_version)s, %(create_date)s)"
 
